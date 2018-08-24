@@ -11,8 +11,8 @@ SECRET_KEY = "EjpNVSNQTyGi1VvWECj9TvC/+kq3oujee2kTfQUs8yCM6xX9Yjq52v54g+HVoknA"
 class Config(object):
     """工程配置信息"""
     DEBUG = True
-    # 数据库的配置信息
 
+    # 数据库的配置信息
     SQLALCHEMY_DATABASE_URI = "mysql://root:mysql@127.0.0.1:3306/information"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     # redis配置
@@ -30,7 +30,7 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 CSRFProtect(app)
 Session(app)
-# 初始化ｒｅｄｉｓ存储对象
+# 初始化redis存储对象
 redis_store = redis.StrictRedis(host=Config.REDIS_HOST, port=Config.REDIS_PORT)
 
 @app.route('/')
